@@ -219,6 +219,11 @@ const jobService = {
     findAll: async () => {
         return jobs;
     },
+     findAll2: async () => {
+        const promise = fetch('http://localhost:8080/departments');
+
+        return promise;
+    },
     findById: async (id) => {
         return jobs.find((j) => j.id === Number(id));
     },
@@ -230,8 +235,9 @@ const jobService = {
         const ids = JSON.parse(localStorage.getItem("favouriteJobs") || "[]");
         return jobs.filter((j) => ids.includes(j.id));
     },
-    getDepartments: async () => {
-        return departments;
+    getDepartments: () => {
+
+        return fetch("http://localhost:8080/departments");
     },
     getLocations: async () => {
         return locations;

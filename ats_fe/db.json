@@ -1,0 +1,336 @@
+{
+    "jobs": [
+        {
+            "id": 1,
+            "title": "Frontend React Developer",
+            "category": "Software Development",
+            "departmentId": 1,
+            "location": "Ha Noi, Vietnam",
+            "salaryMin": 20000000,
+            "salaryMax": 35000000,
+            "salary": "20,000,000 - 35,000,000 VND",
+            "skills": [
+                "ReactJS",
+                "TypeScript",
+                "Redux"
+            ],
+            "employmentType": "Full-time",
+            "status": "PUBLISHED",
+            "description": "Develop scalable and responsive web applications using ReactJS and TypeScript. Collaborate closely with backend teams and UI/UX designers.",
+            "requirements": [
+                "Bachelor's degree in Computer Science or related field",
+                "2+ years of ReactJS experience",
+                "Strong knowledge of JavaScript and TypeScript",
+                "Experience working with REST APIs"
+            ],
+            "publishedAt": "2026-05-18",
+            "deadline": "2026-06-20",
+            "numberOfApplicants": 0,
+            "numberOfFavourites": 0
+        },
+        {
+            "id": 2,
+            "title": "UI/UX Designer",
+            "category": "Design",
+            "departmentId": 2,
+            "location": "Ho Chi Minh City, Vietnam",
+            "salaryMin": 18000000,
+            "salaryMax": 30000000,
+            "salary": "18,000,000 - 30,000,000 VND",
+            "skills": [
+                "Figma",
+                "UX Research",
+                "Prototyping"
+            ],
+            "employmentType": "Full-time",
+            "status": "PUBLISHED",
+            "description": "Create intuitive and visually stunning user interfaces. Conduct user research and usability testing to deliver delightful product experiences.",
+            "requirements": [
+                "Bachelor's degree in Design or related field",
+                "3+ years of UI/UX design experience",
+                "Proficiency in Figma, Sketch, or Adobe XD",
+                "Strong portfolio showcasing web and mobile design"
+            ],
+            "publishedAt": "2026-05-20",
+            "deadline": "2026-06-25",
+            "numberOfApplicants": 0,
+            "numberOfFavourites": 0
+        },
+        {
+            "id": 3,
+            "title": "Backend Java Developer",
+            "category": "Software Development",
+            "departmentId": 1,
+            "location": "Da Nang, Vietnam",
+            "salaryMin": 25000000,
+            "salaryMax": 40000000,
+            "salary": "25,000,000 - 40,000,000 VND",
+            "skills": [
+                "Java",
+                "Spring Boot",
+                "MySQL"
+            ],
+            "employmentType": "Full-time",
+            "status": "PUBLISHED",
+            "description": "Build and maintain enterprise-grade backend services using Spring Boot and Microservices architecture.",
+            "requirements": [
+                "3+ years of Java backend experience",
+                "Strong understanding of Spring Framework",
+                "Experience with relational databases",
+                "Knowledge of RESTful API design"
+            ],
+            "publishedAt": "2026-05-19",
+            "deadline": "2026-06-22",
+            "numberOfApplicants": 0,
+            "numberOfFavourites": 0
+        },
+        {
+            "id": 4,
+            "title": "DevOps Engineer",
+            "category": "Infrastructure",
+            "departmentId": 3,
+            "location": "Ha Noi, Vietnam",
+            "salaryMin": 30000000,
+            "salaryMax": 50000000,
+            "salary": "30,000,000 - 50,000,000 VND",
+            "skills": [
+                "Docker",
+                "Kubernetes",
+                "CI/CD"
+            ],
+            "employmentType": "Full-time",
+            "status": "PUBLISHED",
+            "description": "Manage cloud infrastructure, automate deployments, and optimize CI/CD pipelines.",
+            "requirements": [
+                "Experience with Docker and Kubernetes",
+                "Knowledge of Jenkins or GitHub Actions",
+                "Understanding of Linux systems",
+                "Cloud platform experience is a plus"
+            ],
+            "publishedAt": "2026-05-17",
+            "deadline": "2026-06-18",
+            "numberOfApplicants": 0,
+            "numberOfFavourites": 0
+        },
+        {
+            "id": 5,
+            "title": "QA Automation Engineer",
+            "category": "Quality Assurance",
+            "departmentId": 4,
+            "location": "Can Tho, Vietnam",
+            "salaryMin": 15000000,
+            "salaryMax": 28000000,
+            "salary": "15,000,000 - 28,000,000 VND",
+            "skills": [
+                "Selenium",
+                "JUnit",
+                "API Testing"
+            ],
+            "employmentType": "Full-time",
+            "status": "PUBLISHED",
+            "description": "Design and execute automated test cases to ensure software quality and reliability.",
+            "requirements": [
+                "Experience with automation testing tools",
+                "Understanding of software QA methodologies",
+                "Ability to write test scripts",
+                "Knowledge of REST API testing"
+            ],
+            "publishedAt": "2026-05-21",
+            "deadline": "2026-06-24",
+            "numberOfApplicants": 0,
+            "numberOfFavourites": 0
+        },
+        {
+            "id": 6,
+            "title": "Data Analyst",
+            "category": "Data",
+            "departmentId": 5,
+            "location": "Ho Chi Minh City, Vietnam",
+            "salaryMin": 18000000,
+            "salaryMax": 32000000,
+            "salary": "18,000,000 - 32,000,000 VND",
+            "skills": [
+                "SQL",
+                "Power BI",
+                "Python"
+            ],
+            "employmentType": "Full-time",
+            "status": "PUBLISHED",
+            "description": "Analyze business data and provide insights through dashboards and reports.",
+            "requirements": [
+                "Strong analytical thinking",
+                "Experience with BI tools",
+                "Knowledge of SQL and Python",
+                "Ability to communicate insights clearly"
+            ],
+            "publishedAt": "2026-05-22",
+            "deadline": "2026-06-26",
+            "numberOfApplicants": 0,
+            "numberOfFavourites": 0
+        },
+        {
+            "id": 7,
+            "title": "Mobile Android Developer",
+            "category": "Mobile Development",
+            "departmentId": 1,
+            "location": "Ha Noi, Vietnam",
+            "salaryMin": 22000000,
+            "salaryMax": 38000000,
+            "salary": "22,000,000 - 38,000,000 VND",
+            "skills": [
+                "Kotlin",
+                "Jetpack Compose",
+                "Firebase"
+            ],
+            "employmentType": "Full-time",
+            "status": "PUBLISHED",
+            "description": "Develop modern Android applications with Kotlin and Jetpack Compose.",
+            "requirements": [
+                "2+ years Android development experience",
+                "Strong Kotlin knowledge",
+                "Experience with REST APIs",
+                "Published apps on Google Play is a plus"
+            ],
+            "publishedAt": "2026-05-23",
+            "deadline": "2026-06-28",
+            "numberOfApplicants": 0,
+            "numberOfFavourites": 0
+        },
+        {
+            "id": 8,
+            "title": "Project Manager",
+            "category": "Management",
+            "departmentId": 6,
+            "location": "Da Nang, Vietnam",
+            "salaryMin": 35000000,
+            "salaryMax": 60000000,
+            "salary": "35,000,000 - 60,000,000 VND",
+            "skills": [
+                "Agile",
+                "Scrum",
+                "Leadership"
+            ],
+            "employmentType": "Full-time",
+            "status": "PUBLISHED",
+            "description": "Lead software projects, coordinate teams, and ensure timely delivery.",
+            "requirements": [
+                "5+ years project management experience",
+                "Strong leadership skills",
+                "Experience with Agile methodologies",
+                "PMP certification is a plus"
+            ],
+            "publishedAt": "2026-05-24",
+            "deadline": "2026-06-29",
+            "numberOfApplicants": 0,
+            "numberOfFavourites": 0
+        },
+        {
+            "id": 9,
+            "title": "Cybersecurity Specialist",
+            "category": "Security",
+            "departmentId": 7,
+            "location": "Ha Noi, Vietnam",
+            "salaryMin": 28000000,
+            "salaryMax": 48000000,
+            "salary": "28,000,000 - 48,000,000 VND",
+            "skills": [
+                "Penetration Testing",
+                "SIEM",
+                "Network Security"
+            ],
+            "employmentType": "Full-time",
+            "status": "PUBLISHED",
+            "description": "Protect enterprise systems and applications against cyber threats and vulnerabilities.",
+            "requirements": [
+                "Experience in cybersecurity operations",
+                "Knowledge of penetration testing",
+                "Understanding of security best practices",
+                "Security certifications are preferred"
+            ],
+            "publishedAt": "2026-05-25",
+            "deadline": "2026-06-30",
+            "numberOfApplicants": 0,
+            "numberOfFavourites": 0
+        },
+        {
+            "id": 10,
+            "title": "AI Engineer",
+            "category": "Artificial Intelligence",
+            "departmentId": 8,
+            "location": "Ho Chi Minh City, Vietnam",
+            "salaryMin": 35000000,
+            "salaryMax": 70000000,
+            "salary": "35,000,000 - 70,000,000 VND",
+            "skills": [
+                "Python",
+                "TensorFlow",
+                "Machine Learning"
+            ],
+            "employmentType": "Full-time",
+            "status": "PUBLISHED",
+            "description": "Develop AI models and deploy intelligent systems for business applications.",
+            "requirements": [
+                "Strong Python programming skills",
+                "Experience with machine learning frameworks",
+                "Knowledge of deep learning concepts",
+                "Experience deploying AI models is a plus"
+            ],
+            "publishedAt": "2026-05-26",
+            "deadline": "2026-07-01",
+            "numberOfApplicants": 0,
+            "numberOfFavourites": 0
+        }
+    ],
+    "departments": [
+        {
+            "id": 1,
+            "departmentName": "Engineering",
+            "description": "Responsible for software architecture, backend, frontend, and mobile application development."
+        },
+        {
+            "id": 2,
+            "departmentName": "Design",
+            "description": "Focuses on UI/UX design, user research, branding, and product experience optimization."
+        },
+        {
+            "id": 3,
+            "departmentName": "DevOps & Infrastructure",
+            "description": "Manages CI/CD pipelines, cloud infrastructure, monitoring, and deployment automation."
+        },
+        {
+            "id": 4,
+            "departmentName": "Quality Assurance",
+            "description": "Ensures software quality through manual testing, automation testing, and performance testing."
+        },
+        {
+            "id": 5,
+            "departmentName": "Data Analytics",
+            "description": "Analyzes business data and generates actionable insights for strategic decision-making."
+        },
+        {
+            "id": 6,
+            "departmentName": "Project Management",
+            "description": "Coordinates project planning, execution, delivery, and stakeholder communication."
+        },
+        {
+            "id": 7,
+            "departmentName": "Cybersecurity",
+            "description": "Protects systems, networks, and applications against cyber threats and security vulnerabilities."
+        },
+        {
+            "id": 8,
+            "departmentName": "Artificial Intelligence",
+            "description": "Builds machine learning models, AI solutions, and intelligent business applications."
+        },
+        {
+            "id": 9,
+            "departmentName": "Human Resources",
+            "description": "Handles recruitment, employee engagement, training, and company culture development."
+        },
+        {
+            "id": 10,
+            "departmentName": "Marketing",
+            "description": "Develops marketing strategies, manages campaigns, and promotes company products and services."
+        }
+    ]
+}

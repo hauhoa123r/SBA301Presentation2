@@ -1,8 +1,8 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import PublicLayout from "@/app/layout/PublicLayout";
-import PublicHomePage from "@/features/publics/pages/PublicHomePage";
-import AboutUsPage from "@/features/publics/pages/AboutUsPage";
+import PublicHomePage from "@/features/public/pages/PublicHomePage";
+import AboutUsPage from "@/features/public/pages/AboutUsPage";
 import ViewJobListPage from "@/features/jobs/pages/ViewJobListPage";
 import PublicJobDetailPage from "@/features/jobs/pages/PublicJobDetailPage";
 

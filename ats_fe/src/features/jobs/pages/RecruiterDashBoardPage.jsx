@@ -1,9 +1,9 @@
 import React from 'react'
 
-const ManagementDashBoardPage = () => {
+const RecruiterDashBoardPage = () => {
   return (
     <div>ManagementDashBoardPage</div>
   )
 }
 
-export default ManagementDashBoardPage
+export default RecruiterDashBoardPage
