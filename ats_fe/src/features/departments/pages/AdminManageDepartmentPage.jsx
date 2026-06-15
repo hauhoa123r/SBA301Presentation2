@@ -11,6 +11,7 @@ import {
 import DepartmentLogo from "../components/DepartmentLogo";
 import { useForm } from "react-hook-form";
 import departmentService from "../services/department.service";
+import CustomPagination from "@/shared/components/CustomPagination";
 
 const AdminManageDepartmentPage = () => {
   const [departments, setDepartments] = useState([]);
@@ -20,6 +21,10 @@ const AdminManageDepartmentPage = () => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [isError, setIsError] = useState(false);
   const [selectedDepartment, setSelectedDepartment] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -35,29 +40,49 @@ const AdminManageDepartmentPage = () => {
     criteriaMode: "all",
   });
 
-  function fetchDepartments() {
-    departmentService
-      .getDepartments()
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => setDepartments(data))
-      .catch((error) => {
-        console.error("Error fetching departments:", error);
-        setMessage(
-          `Failed to fetch departments. Please try again later: ${error.message}`,
-        );
+  useEffect(() => {
+    async function loadDepartments() {
+      await fetchDepartments(currentPage);
+    }
+    loadDepartments();
+  }, [currentPage]);
+
+  async function fetchDepartments(currentPage) {
+    try {
+      const response = await departmentService.getDepartments({
+        page: currentPage - 1,
+        size: 5,
       });
+      setDepartments(response.data.content || []);
+      setTotalPages(response.data.totalPages || 0);
+
+      console.log("Fetched departments:", response.data.totalPages);
+    } catch (error) {
+      console.error("Error fetching departments:", error);
+      setMessage(
+        `Failed to fetch departments. Please try again later: ${error.message}`,
+      );
+    }
+
+    // Fetch departments using the service and handle errors
+    // departmentService.getDepartments()
+    //   .then((response) => {
+    //     if (!response.ok) {
+    //       throw new Error(`HTTP ${response.status}`);
+    //     }
+    //     return response.json();
+    //   })
+    //   .then((data) => setDepartments(data))
+    //   .catch((error) => {
+    //     console.error("Error fetching departments:", error);
+    //     setMessage(
+    //       `Failed to fetch departments. Please try again later: ${error.message}`,
+    //     );
+    //   });
   }
 
-  useEffect(() => {
-    fetchDepartments();
-  }, []);
-
   // Filter inline theo keyword (suy ra từ state, không cần useMemo)
+
   const q = keyword.trim().toLowerCase();
   const visibleDepartments = q
     ? departments.filter(
@@ -82,17 +107,11 @@ const AdminManageDepartmentPage = () => {
     try {
       const response = await departmentService.createDepartment(data);
 
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}`);
-      }
-
-      const result = await response.json();
-      console.log("Department created successfully:", result);
-      setMessage("Department created successfully!");
+      console.log("Department created successfully:", response.data.message);
+      setMessage(response.data.message || "Department created successfully!");
     } catch (error) {
       console.error("Error creating department:", error);
-      setMessage(
-        `Failed to create department. Please try again later: ${error.message}`,
+      setMessage(`Failed to create department. Please try again later: ${error.message}`
       );
       setIsError(true);
     }
@@ -128,8 +147,13 @@ const AdminManageDepartmentPage = () => {
     try {
       await departmentService.deleteDepartment(selectedDepartment.id);
       alert("Department deleted successfully!");
+      // Refresh the department list after deletion
+      setIsDeleting(true);
 
-      fetchDepartments();
+      setTimeout(async () => {
+        setIsDeleting(false);
+        await fetchDepartments(currentPage);
+      }, 1000);
     } catch (error) {
       console.error("Error deleting department:", error);
     }
@@ -251,6 +275,13 @@ const AdminManageDepartmentPage = () => {
             )}
           </tbody>
         </Table>
+        <div className="d-flex justify-content-start mt-3">
+          <CustomPagination
+            totalPages={totalPages}
+            currentPage={currentPage}
+            onPageChange={setCurrentPage}
+          />
+        </div>
       </div>
 
       <Modal show={showDeleteModal} onHide={() => setShowDeleteModal(false)}>

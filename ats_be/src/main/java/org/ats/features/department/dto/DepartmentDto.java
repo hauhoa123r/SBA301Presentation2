@@ -10,7 +10,7 @@ import lombok.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class DepartmentRequest {
+public class DepartmentDto {
     private Long id;
 
     @NotBlank

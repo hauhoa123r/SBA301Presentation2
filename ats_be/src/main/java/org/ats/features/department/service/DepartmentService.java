@@ -1,14 +1,16 @@
 package org.ats.features.department.service;
 
-import org.ats.features.department.dto.DepartmentRequest;
+import org.ats.features.department.dto.DepartmentDto;
+import org.ats.features.department.dto.PageResponse;
 import org.ats.features.entities.Department;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 
 public interface DepartmentService {
-    Long create(DepartmentRequest departmentRequest);
-    Department update(DepartmentRequest departmentRequest);
+    Long create(DepartmentDto departmentRequest);
+    Department update(DepartmentDto departmentRequest);
 
     Department findById(Long id);
-    Page<Department> findAll(Integer size, Integer index);
+    PageResponse<DepartmentDto> findAll(Integer size, Integer index);
+
+    void delete(Long departmentId);
 }
