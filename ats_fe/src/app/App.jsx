@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import jobRoutes from "@/features/jobs/routes";
 import publicRoutes from "@/features/public/routes";
 import AdminManageDepartmentPage from "@/features/departments/pages/AdminManageDepartmentPage.jsx";
+import DashboardSearch from "@/features/dashboard/pages/DashboardSearch";
 function App() {
   // Logic
 
@@ -15,7 +16,7 @@ function App() {
         <Route path="/login" element={<CandidateLogin />} />
         <Route path="/register" element={<CandidateLogin />} />
         {jobRoutes}
-      
+        <Route path="/dashboard/search" element={<DashboardSearch />} />
         {publicRoutes}
         <Route path="/management/department" element={<AdminManageDepartmentPage />} />
       </Routes>

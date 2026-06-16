@@ -1,5 +1,6 @@
 package org.ats.features.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -40,9 +41,10 @@ public class Department extends BaseEntity{
     }
 
     // List or Set
+    @JsonIgnore
     @OneToMany(mappedBy = "department")
     private Set<User> users = new HashSet<>();
-
+    @JsonIgnore
     @OneToMany(mappedBy = "department")
     private Set<Job> jobs = new HashSet<>();
 }

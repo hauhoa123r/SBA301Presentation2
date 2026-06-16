@@ -5,6 +5,7 @@ import jakarta.validation.ValidationException;
 import lombok.RequiredArgsConstructor;
 import org.ats.features.department.dto.DepartmentDto;
 import org.ats.features.department.dto.PageResponse;
+import org.ats.features.department.repository.DepartmentRepository;
 import org.ats.features.department.service.DepartmentService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
@@ -18,7 +19,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class DepartmentController {
     private final DepartmentService departmentService;
-
+    private final DepartmentRepository departmentRepository;
     @GetMapping
     public ResponseEntity<PageResponse<DepartmentDto>> getDepartment(@RequestParam(name = "pageIndex", required = false, defaultValue = "0") Integer pageIndex,
                                                                      @RequestParam(name = "pageSize", required = false, defaultValue = "5") Integer pageSize
@@ -47,5 +48,9 @@ public class DepartmentController {
 
         return ResponseEntity.ok().build();
     }
-
+//    @GetMapping("/search")
+//    public ResponseEntity<?> searchDepartment(SearchDepartmentRequest searchRequest) {
+//        List<Department> departmentEntity = departmentRepository.searchDepartment(searchRequest);
+//        return ResponseEntity.ok(departmentEntity);
+//    }
 }
