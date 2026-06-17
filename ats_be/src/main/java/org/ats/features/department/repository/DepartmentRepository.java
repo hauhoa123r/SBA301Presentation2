@@ -2,6 +2,7 @@ package org.ats.features.department.repository;
 
 import org.ats.features.department.dto.DepartmentResponse;
 import org.ats.features.dashboard.repository.custom.DashboardRepositoryCustom;
+import org.ats.features.department.repository.custom.DepartmentRepositoryCustom;
 import org.ats.features.entities.Department;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface DepartmentRepository extends JpaRepository<Department, Long>, DashboardRepositoryCustom {
+public interface DepartmentRepository extends JpaRepository<Department, Long>, DepartmentRepositoryCustom {
     boolean existsByDepartmentName(String name);
 
     Department findByDepartmentName(String name);

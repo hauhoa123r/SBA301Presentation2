@@ -4,13 +4,17 @@ import jakarta.validation.Valid;
 import jakarta.validation.ValidationException;
 import lombok.RequiredArgsConstructor;
 import org.ats.features.department.dto.DepartmentDto;
+import org.ats.features.department.dto.DepartmentResponse;
 import org.ats.features.department.dto.PageResponse;
+import org.ats.features.department.dto.SearchDepartmentRequest;
 import org.ats.features.department.repository.DepartmentRepository;
 import org.ats.features.department.service.DepartmentService;
+import org.ats.features.entities.Department;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController // Spring Bean --> Container
@@ -48,9 +52,9 @@ public class DepartmentController {
 
         return ResponseEntity.ok().build();
     }
-//    @GetMapping("/search")
-//    public ResponseEntity<?> searchDepartment(SearchDepartmentRequest searchRequest) {
-//        List<Department> departmentEntity = departmentRepository.searchDepartment(searchRequest);
-//        return ResponseEntity.ok(departmentEntity);
-//    }
+    @GetMapping("/search")
+    public ResponseEntity<?> searchDepartment(SearchDepartmentRequest searchRequest) {
+        List<DepartmentResponse> departmentEntity = departmentRepository.amountUserByDepartment2();
+        return ResponseEntity.ok(departmentEntity);
+    }
 }

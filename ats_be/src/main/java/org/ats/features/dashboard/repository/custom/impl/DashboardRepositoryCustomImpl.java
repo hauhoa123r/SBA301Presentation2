@@ -29,7 +29,7 @@ public class DashboardRepositoryCustomImpl implements DashboardRepositoryCustom 
         Join<User, Job> jobJoin = createJobJoin(userRoot);
         SearchCriteriaContext context = new SearchCriteriaContext(dashboardSearchRequest, criteriaBuilder, userRoot, departmentJoin, jobJoin, new ArrayList<>());
         buildPredicates(context);
-        buildSelect(criteriaQuery, criteriaBuilder, userRoot, departmentJoin, jobJoin);
+        buildSelect(criteriaQuery, context);
         criteriaQuery.where(context.predicates().toArray(new Predicate[0]));
         criteriaQuery.distinct(true);
 
@@ -62,22 +62,19 @@ public class DashboardRepositoryCustomImpl implements DashboardRepositoryCustom 
                 )
         );
     }
-    private void buildSelect(CriteriaQuery<DashboardSearchResponse> criteriaQuery, CriteriaBuilder criteriaBuilder, Root<User> userRoot, Join<User, Department> departmentJoin, Join<User, Job> jobJoin) {
-        criteriaQuery.select(criteriaBuilder.construct(
+    private void buildSelect(CriteriaQuery<DashboardSearchResponse> criteriaQuery, SearchCriteriaContext context){
+        criteriaQuery.select(context.criteriaBuilder().construct(
                 DashboardSearchResponse.class,
-                userRoot.get("id"),
-                userRoot.get("fullName"),
-                userRoot.get("email"),
-                userRoot.get("phone"),
-                departmentJoin.get("departmentName"),
-                jobJoin.get("id"),
-                jobJoin.get("title"),
-                jobJoin.get("status")
+                context.userRoot().get("id"),
+                context.userRoot().get("fullName"),
+                context.userRoot().get("email"),
+                context.userRoot().get("phone"),
+                context.departmentJoin().get("departmentName"),
+                context.jobJoin().get("id"),
+                context.jobJoin().get("title"),
+                context.jobJoin().get("status")
         ));
     }
-
-
-
 //    @Override
 //    public Page<DashboardSearchResponse> search(DashboardSearchRequest request) {
 //        CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();

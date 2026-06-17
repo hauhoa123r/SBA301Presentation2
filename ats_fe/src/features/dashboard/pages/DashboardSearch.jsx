@@ -19,13 +19,12 @@ export default function DashboardSearch() {
         userName: "",
         departmentName: "",
         jobName: ""
-    });
+    })
 
     const [results, setResults] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
 
-    // Hàm gọi API dùng phương thức GET với tham số params của Axios
     const handleSearch = useCallback(async (formValues = searchForm) => {
         setIsLoading(true);
         setError(null);
@@ -33,10 +32,10 @@ export default function DashboardSearch() {
             const response = await axios.get(
                 "http://localhost:8080/api/dashboard/search",
                 {
-                    params: formValues // Gửi các ô filter lên URL dạng ?email=...&phone=...
+                    params: formValues 
                 }
             );
-            setResults(response.data || []); // Nhận thẳng List mảng kết quả từ backend
+            setResults(response.data || []); 
         } catch (error) {
             console.error(error);
             setError("Đã xảy ra lỗi khi tải dữ liệu từ hệ thống.");
@@ -45,7 +44,6 @@ export default function DashboardSearch() {
         }
     }, [searchForm]);
 
-    // Tự động gọi API ngay khi vào trang lần đầu tiên
     useEffect(() => {
         const initialForm = {
             email: "",
@@ -65,7 +63,6 @@ export default function DashboardSearch() {
         }));
     };
 
-    // Khi ấn nút tìm kiếm hoặc gõ Enter
     const handleSubmit = (e) => {
         if (e) e.preventDefault();
         handleSearch();
