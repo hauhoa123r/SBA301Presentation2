@@ -16,10 +16,10 @@ public class DepartmentRepositoryCustomImpl implements DepartmentRepositoryCusto
 
     @Override
     public List<DepartmentResponse> amountUserByDepartment2() {
-        CriteriaBuilder criteraBuilder = entityManager.getCriteriaBuilder();
-        CriteriaQuery<DepartmentResponse> criteriaQuery = criteraBuilder.createQuery(DepartmentResponse.class);
-        Root<Department> departmentRoot = criteriaQuery.from(Department.class);
+        CriteriaBuilder criteraBuilder = entityManager.getCriteriaBuilder(); //Tạo bộ công cụ như (điều kiện(>,<,=,like), hàm(sum, avg, count), order by)
+        CriteriaQuery<DepartmentResponse> criteriaQuery = criteraBuilder.createQuery(DepartmentResponse.class); // Tạo khung như (select, from,where, group by, having) kết quả trả về là gì
 
+        Root<Department> departmentRoot = criteriaQuery.from(Department.class);
         Join<Department, User> userJoin = departmentRoot.join("users", JoinType.LEFT);
         System.out.println(departmentRoot.getClass());
         System.out.println(userJoin.getClass());
